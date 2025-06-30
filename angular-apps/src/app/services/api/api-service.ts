@@ -10,9 +10,10 @@ export class ApiService {
   api: string = 'https://685cee53769de2bf085e7b8a.mockapi.io/jatuhtempo/usersDueDate'
   constructor(private http: HttpClient) { }
 
-  getData(){
-    return this.http.get(this.api);
-  }
+  getData(): Observable<Creditur[]> {
+  return this.http.get<Creditur[]>(this.api);
+}
+
   
   addData(data: Creditur){
     return this.http.post(this.api, data);

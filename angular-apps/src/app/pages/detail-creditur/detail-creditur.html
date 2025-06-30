@@ -1,0 +1,17 @@
+<div class="detail-container">
+  <div class="detail-card">
+    <h2>Detail Kreditur</h2>
+    <div *ngIf="loading" class="loading">Loading detail kreditur...</div>
+    <ul *ngIf="!loading && kreditur">
+      <li><b>ID:</b> {{ kreditur.id }}</li>
+      <li><b>Nama:</b> {{ kreditur.name }}</li>
+      <li><b>Umur:</b> {{ kreditur.age }}</li>
+      <li><b>Pekerjaan:</b> {{ kreditur.job }}</li>
+      <li><b>Tanggal Pengajuan:</b> {{ kreditur.tanggalPengajuan | date:'dd MMM yyyy' }}</li>
+      <li><b>Jatuh Tempo:</b> {{ kreditur.dueDate | date:'dd MMMM yyyy' }}</li>
+    </ul>
+    <div *ngIf="!loading && !kreditur" class="notfound">
+      <p>Data kreditur tidak ditemukan.</p>
+    </div>
+  </div>
+</div>

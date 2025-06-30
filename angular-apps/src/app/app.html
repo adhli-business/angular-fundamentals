@@ -1,7 +1,17 @@
-<h1>Reactive Form Module</h1>
+<!-- <h1>Reactive Form Module</h1>
 <app-input (formSubmitted)="onFormSubmit($event)"></app-input>
 <app-table [childrenData]="parentData" (hapusEvent)="onHapus($event)" (dueClicked)="onDueClicked($event)"></app-table>
 <h2>
     {{ wordingMessage }}
-</h2>
+</h2>  -->
+<!-- <app-home (hapusEvent)="onHapus($event)" (dueClicked)="onDueClicked($event)"></app-home>
+
+<!-- app.html -->
+<!-- <app-home 
+  [parentData]="parentData"
+  (hapusEvent)="onHapus($event)" 
+  (dueClicked)="onDueClicked($event)">
+</app-home> -->
+
+<router-outlet></router-outlet>
 <!-- (dataDariChild)="tanganiData($event)" -->

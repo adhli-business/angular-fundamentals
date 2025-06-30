@@ -1,0 +1,26 @@
+.add-creditur-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+}
+
+.add-creditur-card {
+  background: #fff;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.07);
+  min-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.add-creditur-card h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #2d3a4b;
+  margin-bottom: 1.5rem;
+}

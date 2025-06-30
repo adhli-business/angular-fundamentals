@@ -1,4 +1,7 @@
 <h2>Daftar Pengajuan Leasing (Child Component Table)</h2>
+<button>
+    <a href="/add-creditur">Add Creditur</a>
+</button>
 <table border="1" [cellPadding]="10" [cellSpacing]="0">
     <thead>
         <tr>
@@ -25,9 +28,12 @@
                 <button (click)="hapusData(item.id)" class="btn-delete" title="Hapus">
                     🗑️
                 </button>
+                <a [routerLink]="['/detail-creditur', item.id]">
+                  <button class="btn-detail" title="Detail">Detail</button>
+                </a>
             </td>
         </tr>
-    </tbody>
+    </tbody>  
 </table>
 
 <!-- <button (click)="kirimData()">Ganti Nama</button> -->

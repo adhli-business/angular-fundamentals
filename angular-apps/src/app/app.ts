@@ -10,17 +10,18 @@ import { CrediturData } from './services/creditur-data';
 import { PaymentScheduleService } from './services/payment-schedule-service';
 import { NotificationService } from './services/notification-service';
 import { ApiService } from './services/api/api-service';
+import { RouterOutlet } from '@angular/router';
+import { Home } from './pages/home/home';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    RouterOutlet,
     CommonModule,
-    Table,
     FormsModule,
-    ReactiveFormsModule,
-    InputComponent
-  ],
+    ReactiveFormsModule
+],
   providers: [CrediturData,
     PaymentScheduleService,
     NotificationService

@@ -1,14 +1,15 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Creditur } from '../../../model/creditur.interface';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-table',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './table.html',
   styleUrl: './table.scss'
 })
-export class Table {
+export class Table {  
   @Input() childrenData: Creditur[] = []
   @Output() hapusEvent = new EventEmitter<string>();
   @Output() dueClicked = new EventEmitter<Creditur>();

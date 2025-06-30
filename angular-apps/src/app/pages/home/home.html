@@ -1,0 +1,13 @@
+<div class="home-container">
+  <header class="home-header">
+    <h1>Dashboard Kreditur</h1>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </header>
+  <section class="table-section">
+    <app-table
+      [childrenData]="parentData"
+      (hapusEvent)="onHapus($event)"
+      (dueClicked)="onDueClicked($event)">
+    </app-table>
+  </section>
+</div>
