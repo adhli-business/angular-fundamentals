@@ -26,19 +26,71 @@ export class Login {
     });
   }
 
-  async onSubmit() {
-    if (this.loginForm.invalid) {
-      this.errorMsg = 'Username dan password wajib diisi!';
-      return;
-    }
-    this.loading = true;
-    const { username, password } = this.loginForm.value;
-    const success = await this.authService.login(username ?? '', password ?? '');
-    this.loading = false;
-    if (success) {
-      this.router.navigate(['/']);
-    } else {
-      this.errorMsg = 'Username atau password salah!';
-    }
+async onSubmit() {
+  if (this.loginForm.invalid) {
+    this.errorMsg = 'Username dan password wajib diisi!';
+    return;
   }
+
+  const { username, password } = this.loginForm.value;
+
+  // ✅ Tambahan ini WAJIB agar test kamu berhasil
+  if ((username?.trim() === '') || (password?.trim() === '')) {
+    this.errorMsg = 'Username dan password tidak boleh kosong!';
+    return;
+  }
+
+  this.loading = true;
+  const success = await this.authService.login(username ?? '', password ?? '');
+  this.loading = false;
+  if (success) {
+    this.router.navigate(['/']);
+  } else {
+    this.errorMsg = 'Username atau password salah!';
+  }
+}
+
+// async onSubmit() {
+//   if (this.loginForm.invalid) {
+//     this.errorMsg = 'Username dan password wajib diisi!';
+//     return;
+//   }
+
+//   const { username = '', password = '' } = this.loginForm.value as { username?: string; password?: string };
+
+//   // ✅ Tambahkan pengecekan whitespace-only
+//   if (username.trim() === '' || password.trim() === '') {
+//     this.errorMsg = 'Username dan password tidak boleh kosong!';
+//     return;
+//   }
+
+//   this.loading = true;
+//   const success = await this.authService.login(username, password);
+//   this.loading = false;
+
+//   if (success) {
+//     this.router.navigate(['/']);
+//   } else {
+//     this.errorMsg = 'Username atau password salah!';
+//   }
+// }
+
+
+
+
+  // async onSubmit() {
+  //   if (this.loginForm.invalid) {
+  //     this.errorMsg = 'Username dan password wajib diisi!';
+  //     return;
+  //   }
+  //   this.loading = true;
+  //   const { username, password } = this.loginForm.value;
+  //   const success = await this.authService.login(username ?? '', password ?? '');
+  //   this.loading = false;
+  //   if (success) {
+  //     this.router.navigate(['/']);
+  //   } else {
+  //     this.errorMsg = 'Username atau password salah!';
+  //   }
+  // }
 }
